@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+}
+
+body {
+    background: #ffffff;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.container {
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 4px;
+}
+
+#stats {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(19, 1fr);
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.box {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.box.checked {
+    background: #000;
+    cursor: default;
+}
+
+button {
+    padding: 10px 24px;
+    font-weight: bold;
+    border: 2px solid #000;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:disabled {
+    background: #aaa;
+    border-color: #aaa;
+    cursor: not-allowed;
+}
+
+.status {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #666;
+}
