@@ -1,6 +1,6 @@
 const YEAR = new Date().getFullYear();
 const TOTAL_DAYS = 365;
-const STORAGE_KEY = "365-discipline";
+const STORAGE_KEY = "365-discipline"; //the name under which data is stored in localStorage
 
 const yearEl = document.getElementById("year");
 const statsEl = document.getElementById("stats");
@@ -10,7 +10,7 @@ const statusEl = document.getElementById("status");
 
 const today = new Date();
 const startOfYear = new Date(YEAR, 0, 1);
-const todayIndex = Math.floor((today - startOfYear) / (1000 * 60 * 60 * 24));
+const todayIndex = Math.floor((today - startOfYear) / (1000 * 60 * 60 * 24)); //This is how the system knows: which box is clickable which days are locked ,where the streak ends
 
 yearEl.textContent = `YEAR ${YEAR}`;
 
@@ -19,7 +19,7 @@ let dirty = false;
 
 function loadData() {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) return JSON.parse(raw);
+    if (raw) return JSON.parse(raw);    //If data already exists: pull it from browser memory
 
     return {
         year: YEAR,
