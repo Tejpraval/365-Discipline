@@ -10,23 +10,28 @@ body {
     color: #000;
     display: flex;
     justify-content: center;
-    padding: 40px;
+    padding: 24px;
+    margin: 0;
 }
 
 .container {
+    width: 100%;
     max-width: 600px;
     text-align: center;
 }
 
 h1 {
     margin-bottom: 4px;
+    font-size: 1.4rem;
 }
 
 #stats {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     font-weight: 600;
+    font-size: 0.9rem;
 }
 
+/* ===== GRID ===== */
 .grid {
     display: grid;
     grid-template-columns: repeat(19, 1fr);
@@ -34,9 +39,9 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* Box size scales with screen */
 .box {
-    width: 24px;
-    height: 24px;
+    aspect-ratio: 1 / 1;
     border: 1px solid #000;
     cursor: pointer;
 }
@@ -46,8 +51,16 @@ h1 {
     cursor: default;
 }
 
+/* Disabled days */
+.box[style*="not-allowed"] {
+    border-color: #999;
+}
+
+/* ===== BUTTON ===== */
 button {
-    padding: 10px 24px;
+    width: 100%;
+    max-width: 200px;
+    padding: 10px 0;
     font-weight: bold;
     border: 2px solid #000;
     background: #000;
@@ -62,7 +75,30 @@ button:disabled {
 }
 
 .status {
-    margin-top: 8px;
-    font-size: 12px;
+    margin-top: 6px;
+    font-size: 11px;
     color: #666;
+}
+
+/* ===== MOBILE ADJUSTMENTS ===== */
+@media (max-width: 480px) {
+    body {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    #stats {
+        font-size: 0.8rem;
+    }
+
+    .grid {
+        gap: 4px;
+    }
+
+    button {
+        max-width: 100%;
+    }
 }
